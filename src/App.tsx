@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Primary from './pages/Primary';
-import Secondary from './pages/Secondary';
+import Home from './pages/public/Home';
+import Primary from './pages/private/Primary';
+import Secondary from './pages/private/Secondary';
 import ProtectedRoute from './common/ProtectedRoute';
-import Login from './pages/Login';
+import Login from './pages/public/Login';
 
 function App() {
   return (
