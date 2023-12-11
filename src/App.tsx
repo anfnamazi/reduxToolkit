@@ -6,6 +6,7 @@ import ProtectedRoute from "./common/ProtectedRoute";
 import Login from "./pages/public/Login";
 import { useAppDispatch } from "./app/hook";
 import { set as setToken } from "./features/token";
+import { withNavigator } from "./HOC/withNavigator";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default withNavigator(App);
