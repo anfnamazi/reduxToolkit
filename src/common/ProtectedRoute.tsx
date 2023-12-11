@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hook";
 import { clear as clearToken } from "../features/token";
+import { toast } from "react-toastify";
 
 interface ProtectedRouteProps {}
 
@@ -10,7 +11,7 @@ const ProtectedRoute: FC<ProtectedRouteProps> = () => {
   const dispatch = useAppDispatch();
 
   if (!token) {
-    console.log("redirect login");
+    toast.error("token invalid redirect to login!");
     return <Navigate to="/login" />;
   }
 
