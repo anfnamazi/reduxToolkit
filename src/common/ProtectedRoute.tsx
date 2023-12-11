@@ -1,12 +1,23 @@
 import { FC } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import { useAppSelector } from "../app/hook";
 
-interface ProtectedRouteProps {
-    
-}
- 
+interface ProtectedRouteProps {}
+
 const ProtectedRoute: FC<ProtectedRouteProps> = () => {
-    return ( <div>protect<Outlet /></div> );
-}
- 
+  const token = useAppSelector((state) => state.token);
+
+  if (!token) {
+    console.log("redirect login");
+    return <Navigate to="/login" />;
+  }
+
+  return (
+    <div>
+      protect
+      <Outlet />
+    </div>
+  );
+};
+
 export default ProtectedRoute;
