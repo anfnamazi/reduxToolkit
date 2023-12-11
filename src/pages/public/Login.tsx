@@ -12,6 +12,7 @@ const Login: FC<LoginProps> = () => {
   const token = useAppSelector((state) => state.token);
 
   if (token) {
+    toast.info("token valid redirect to primary")
     return <Navigate to="/primary" />;
   }
 
