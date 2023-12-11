@@ -7,12 +7,8 @@ export const tokenSlice = createSlice({
   name: "token",
   initialState,
   reducers: {
-    set: (state, action: PayloadAction<string>) => {
-      state = action.payload;
-    },
-    clear: (state) => {
-      state = null;
-    },
+    set: (state, action: PayloadAction<string>) => action.payload,
+    clear: () => null,
   },
 });
 
