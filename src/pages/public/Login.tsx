@@ -11,6 +11,7 @@ const Login: FC<LoginProps> = () => {
 
   const handleLogin = () => {
     dispatch(setToken("token"));
+    localStorage.setItem("token", "token");
     navigate("/primary");
   };
 
